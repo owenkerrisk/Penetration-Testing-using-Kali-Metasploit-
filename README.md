@@ -115,8 +115,11 @@ Exercise: Run the nikto tool on port 80. Click on the service window in Legion, 
 ANS:
 
 ![Image](https://github.com/user-attachments/assets/7fdc3335-48c3-414d-9bb0-214f06c9415d)
+
 ![Image](https://github.com/user-attachments/assets/c1d8bcfc-f98d-47b0-9fd1-852609a5cf96)
+
 ![Image](https://github.com/user-attachments/assets/08ee9403-3954-4dde-a484-60083e56c260)
+
 ![Image](https://github.com/user-attachments/assets/c4a97e47-4c0f-48cd-bf31-c7013e1a8aa5)
 
 Exercise. Grab the screenshot for port 3500 

@@ -2,34 +2,10 @@
 
 ![Image](https://github.com/user-attachments/assets/be32b2c4-bc00-4bd1-aade-941d3b494e93)
 
-## Table of Contents
-
-  1. [Introduction](#introduction)
-  2. [Network Scanning](#network-scanning)
-      - [NMAP network scanning](#nmap-network-scanning)
-      - [Scan Automation using Legion](#scan-automation-using-legion)  
-  3. [Exploiting Unreal IRC server](#exploiting-unreal-irc-server)
-      - [Exploiting UnrealIRCd](#sexploiting-unrealircd)
-      - [Start HTTP webservice](#start-http-webservice)
-  5. [Gaining Root Access](#gaining-root-access)
-  6. [Setting up Splunk Server and Forwarders](#setting-up-splunk-server-and-forwarders)
-      - [Setting Static IP Address and Default Route](#setting-static-ip-address-and-default-route)
-      - [Install Splunk Enterprise](#install-splunk-enterprise)
-      - [Setting Up Splunk Forwarder](#setting-up-splunk-forwarder)
-      - [Installing Sysmon](#installing-sysmon)
-      - [Configuring Inputs for Splunk Forwarder](#configuring-inputs-for-splunk-forwarder)
-      - [Restarting Splunk Forwarder Service](#restarting-splunk-forwarder-service)
-      - [Connecting to Splunk Web Interface](#connecting-to-splunk-web-interface)
-  7. [Setting up Active Directory and Provisioning Users](#setting-up-active-directory-and-provisioning-users)
-  8. [Performing a Brute Force Attack on Target_PC and Reviewing Events via Splunk](#performing-a-brute-force-attack-on-target_pc-and-reviewing-events-via-splunk)
-  9. [Installing Atomic Red Team, Performing a Test, and Reviewing Events in Splunk](#installing-atomic-red-team-performing-a-test-and-reviewing-events-in-splunk)
-  10. [Conclusion](#conclusion)
-
----
-
 ## 📖 Table of Contents
 
-- [Introduction](#introduction)  
+- [Introduction](#introduction)
+- [Tools Used](#tools-used)
 - [Task 1 - Network Scanning](#task-1---network-scanning)  
   - [Exercise 1.1: NMAP Network Scanning](#exercise-11-nmap-network-scanning)  
   - [Exercise 1.2: Scan Automation using Legion](#exercise-12-scan-automation-using-legion)  
@@ -48,33 +24,58 @@
 - [Task 7 - ATT&CK Technique Countermeasure](#task-7---attck-technique-countermeasure)  
   - [ATT&CK Matrix](#attck-matrix)  
 - [Conclusion](#conclusion)  
-- [References](#references)
+- [References](#references)  
 
   ---
 
-## Objective
+## Introduction
 
-This lab is all about getting hands-on with Active Directory and security monitoring. I've set up Windows Server 2022 AD domain controller and a Ubuntu Splunk server, then used Kali Linux to play the role of an attacker in the network. The goal is to see what kind of events get generated from these attacks and learn how to configure and use Splunk to catch them. I aim to dive into domain environments and sharpen threat detection skills.
+In today’s interconnected world, computer and cloud security are paramount for organizations striving to safeguard their operations. Cloud service providers and their corporate clients must proactively prepare to counter cyberthreats before they strike and ensure resilience against a diverse range of malicious activities to maintain a competitive edge. While cloud-based solutions offer compelling cost-saving benefits, they also introduce challenges related to scalability, privacy, and security. These concerns contribute to hesitation and complexities surrounding their widespread adoption.
 
-This is by no means a comprehensive step-by-step of my process, but rather a few key processes that are interesting or will be useful for my future reference.
-### Network Scanning
+This report will focus on penetration testing using both Kali and Metasploit. The goal is to complete each assigned task given. I will be focusing on the following;
+•	Network Scanning
+•	Exploiting the unreal IRC Server
+•	Gaining root access
+•	Cracking the passwords
+•	Logging into ubuntu Metasploit
+•	Mapping to Att&ck
+•	Att&ck Technique Countermeasures 
 
-- Configuring and managing Active Directory domain environments
-- Setting up and utilizing Splunk for security event monitoring and analysis
-- Simulating bruteforce attack using Kali Linux
-- Performing cybersecurity tests using Atomic Red Team.
-- Identifying and interpreting security events generated from attacks via Splunk
-- Analyzing and correlating security events in Splunk with the MITRE ATT&CK framework.
+All of these labs were completed on Oracle Box Virtual Machines which will demonstrate all my work I completed. 
 
 ### Tools Used
 
-- Windows Server 2022 (for Active Directory domain controller)
-- Ubuntu Server (for Splunk server)
-- Splunk (for security event monitoring and analysis)
-- Kali Linux (for simulating bruteforce attack)
-- Windows 10 Client (for interacting with the domain environment)
-- Atomic Red Team (for simulating various attacks mapped to the MITRE ATT&CK framework)
-- VirtualBox (for virtualising the lab environment)
+- Kali Linux (for penetration testing and running Nmap, Legion, and Metasploit)
+- Metasploit (for exploiting vulnerabilities and gaining access to target systems)
+- Nmap (for network scanning and service enumeration)
+- Legion (for automated scanning and vulnerability assessment)
+- Unreal IRCd (target application for exploitation testing)
+- Oracle VirtualBox (for virtualizing the lab environment with Ubuntu and Windows VMs)
+- Ubuntu VM (for hosting Metasploit and conducting penetration testing tasks)
+- Windows VM (for additional network scanning and testing)
+
+### Network Scanning
+
+Task 1: NMAP Network Scanning 
+Exercise 1.1: Carry out a ping sweep and list the network addresses discovered
+
+ANS: nmap -sn 10.0.2.0/24
+
+![Image](https://github.com/user-attachments/assets/99defb5d-21a4-4931-9d28-feebd0543225)
+
+Task - Carry out a TCP SYN scan to determine system ports on Ubuntu VM. Use -Pn to avoid host discovery phase. Show the list of ports for each VM.
+
+ANS: sudo nmap -Pn -PS 192.168.43.252
+
+![Image](https://github.com/user-attachments/assets/5dafabb2-5d41-484a-8104-ffe07176d92f)
+
+Task: Repeat but this time use the -p option to explicity indicate the ports. Use -p 1-65535. highlight any differences between the two scans.
+
+Answer: sudo nmap -Pn -PS -p1-65535 192.168.43.252
+
+![Image](https://github.com/user-attachments/assets/542e706a-81c6-49f4-8afd-2956dc86ec37)
+
+
 
 ## Network Diagram
 
@@ -210,6 +211,17 @@ Below is the final event showing "NewLocalUser" being deleted
 <img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/feb94ab2-9222-4a1a-99b4-020f09bfda07" width="700" />
 
 ---
+
+# 🛡️ MITRE ATT&CK TTPs for Penetration Testing Assignment
+
+| **TTP ID** | **TTP Name**                     | **Description**                                                                                          | **Detection Relevance**                                                         |
+|------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| T1595      | Active Scanning                  | Network scanning using Nmap and Legion to identify live hosts, ports, and services (Task 1).             | Detects reconnaissance efforts targeting network infrastructure and services.   |
+| T1190      | Exploit Public-Facing Application| Exploiting Unreal IRCd server vulnerability on port 6697 (Task 2).                                       | Identifies exploitation attempts on externally accessible applications.         |
+| T1203      | Exploitation for Client Execution| Executing exploit code against Unreal IRCd to gain initial access (Task 2).                             | Reveals execution of malicious code to compromise a target system.              |
+| T1068      | Exploitation for Privilege Escalation | Using a kernel exploit to gain root access on the target system (Task 3).                            | Detects privilege escalation attempts via kernel vulnerabilities.               |
+| T1110      | Brute Force                      | Cracking passwords to extract credentials from the target system (Task 4).                              | Identifies password cracking efforts to uncover valid credentials.              |
+| T1078      | Valid Accounts                   | Logging into Ubuntu Metasploit using provided credentials (Task 5).                                      | Monitors use of legitimate credentials for potential unauthorized access.       |
 
 # Conclusion
 

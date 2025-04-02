@@ -297,10 +297,24 @@ Files and directories in the “vagrant” home directory
 
 ![Image](https://github.com/user-attachments/assets/c8ee511e-be48-4540-95c5-14fa10cb8277)
 
+---
 
 
+Mapping to ATT&CK
 
-# 🛡️ MITRE ATT&CK TTPs for Penetration Testing Assignment
+MITRE ATT&CK is a guideline for classifying and describing cyberattacks and intrusions with a focus on TTPs (Tactics, Techniques and Procedures) and thereby the top of the Pyramid of Pain.
+
+![Image](https://github.com/user-attachments/assets/9de0ad02-9fbd-43fa-854f-dae267425d75)
+
+TTPs can in turn be translated to attacker behaviours. Meaning: what does an attacker do to achieve its goal (e.g. steal money or intellectual property). In more detail TTPs can be explained the following way.
+
+Tactics: the adversary’s technical goals.
+
+Techniques: how the goals are achieved.
+
+Procedures: specific technique implementation.
+
+## 🛡️ MITRE ATT&CK TTPs for Penetration Testing Assignment
 
 | **TTP ID** | **TTP Name**                     | **Description**                                                                                          | **Detection Relevance**                                                         |
 |------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -315,8 +329,8 @@ Files and directories in the “vagrant” home directory
 
 # Conclusion
 
-This lab has been a fantastic learning experience for me. I've set up Splunk Enterprise on Ubuntu, deployed Splunk forwarders, performed tests with Atomic Red Team, and analyzed results in Splunk following the MITRE ATT&CK framework. I also used Kali Linux to simulate a brute force attack and reviewed the outcome in Splunk.
+This penetration testing assignment, leveraging Kali Linux and Metasploit, has been instrumental in deepening my expertise in cybersecurity. By successfully completing a series of rigorous tasks such as Network Scanning, Exploiting the Unreal IRC Server, Gaining Root Access, Cracking Passwords, Logging into Ubuntu Metasploit, Mapping to MITRE ATT&CK, and Identifying ATT&CK Technique Countermeasures has allowed me to significantly expanded my technical skill set and practical understanding of offensive security. 
 
-Through setting all this up, I've sharpened my skills in virtualization with VirtualBox, general Windows and Linux processes and learned the essentials of setting up Active Directory on Windows Server.
+In spite of encountering numerous challenges, such as the complexities of password cracking, I persevered, gaining valuable insights into the critical role of robust security practices in organizations. This process underscored the importance of identifying vulnerabilities, like weak passwords, to assess an organization’s security posture—a key takeaway for any aspiring penetration tester. 
 
-I'm excited to keep building on this lab. My next steps include creating Splunk alerts, tweaking group policies, and just generally tinkering around in the domain environment. There's always more to learn, and I'm looking forward to it!
+Additionally, utilising Metasploit and applying ATT&CK frameworks has equipped me with essential tools and methodologies to excel in the IT security industry. 

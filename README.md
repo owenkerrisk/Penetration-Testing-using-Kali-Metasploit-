@@ -101,6 +101,7 @@ ANS:
 Exercie: Show the list of ports and services:
 
 ANS:
+
 ![Image](https://github.com/user-attachments/assets/ef5b0eed-95f4-4cbb-a115-661ae8a6bb53)
 
 Exercise: Show the screenshot for port 80

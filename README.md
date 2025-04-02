@@ -90,20 +90,21 @@ For Windows VM: sudo nmap -O -sV 192.168.43.81
 ![image](https://github.com/user-attachments/assets/4489b35c-254a-4333-af88-435c4af224e0)
 
 Exercise 1.2: Scan automation using Legion
-1.	Start a scan on the Ubuntu host 
+
+Start a scan on the Ubuntu host 
 ANS:
 ![image](https://github.com/user-attachments/assets/85933205-b187-4673-8306-e7629ebc12d3)
 
-3.	Show the list of ports and services:
+Exercies: Show the list of ports and services:
 ANS:
 ![image](https://github.com/user-attachments/assets/a4e0ba50-c1c9-4fdb-bba9-62a8df90a89c)
 
-4.	Show the screenshot for port 80
+Exercise: Show the screenshot for port 80
 
 ANS: 
 ![image](https://github.com/user-attachments/assets/c9ce68d4-700e-4538-8de4-350181720042)
 
-4. Run the nikto tool on port 80. Click on the service window in Legion, select http and select port 80 in right hand window, right click to display options. Select run nikto! Select Tools windows in Legion and select nikto to see results of scan). Indicate three vulnerabilities indicated by nikto on port 80 - refer to OSVDB number report. Include the OSVDB number where appropriate.
+Exercise: Run the nikto tool on port 80. Click on the service window in Legion, select http and select port 80 in right hand window, right click to display options. Select run nikto! Select Tools windows in Legion and select nikto to see results of scan). Indicate three vulnerabilities indicated by nikto on port 80 - refer to OSVDB number report. Include the OSVDB number where appropriate.
 
 ANS:
 ![image](https://github.com/user-attachments/assets/39375400-4245-4b91-871f-89bf936d105e)

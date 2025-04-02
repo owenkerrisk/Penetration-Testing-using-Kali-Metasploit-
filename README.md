@@ -304,12 +304,12 @@ Files and directories in the “vagrant” home directory
 
 | **TTP ID** | **TTP Name**                     | **Description**                                                                                          | **Detection Relevance**                                                         |
 |------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| T1595      | Active Scanning                  | Network scanning using Nmap and Legion to identify live hosts, ports, and services (Task 1).             | Detects reconnaissance efforts targeting network infrastructure and services.   |
-| T1190      | Exploit Public-Facing Application| Exploiting Unreal IRCd server vulnerability on port 6697 (Task 2).                                       | Identifies exploitation attempts on externally accessible applications.         |
-| T1203      | Exploitation for Client Execution| Executing exploit code against Unreal IRCd to gain initial access (Task 2).                             | Reveals execution of malicious code to compromise a target system.              |
-| T1068      | Exploitation for Privilege Escalation | Using a kernel exploit to gain root access on the target system (Task 3).                            | Detects privilege escalation attempts via kernel vulnerabilities.               |
-| T1110      | Brute Force                      | Cracking passwords to extract credentials from the target system (Task 4).                              | Identifies password cracking efforts to uncover valid credentials.              |
-| T1078      | Valid Accounts                   | Logging into Ubuntu Metasploit using provided credentials (Task 5).                                      | Monitors use of legitimate credentials for potential unauthorized access.       |
+| T1595      | Active Scanning                  | Network scanning using Nmap and Legion to identify live hosts, ports, and services.             | Detects reconnaissance efforts targeting network infrastructure and services.   |
+| T1190      | Exploit Public-Facing Application| Exploiting Unreal IRCd server vulnerability on port 6697.                                       | Identifies exploitation attempts on externally accessible applications.         |
+| T1203      | Exploitation for Client Execution| Executing exploit code against Unreal IRCd to gain initial access.                             | Reveals execution of malicious code to compromise a target system.              |
+| T1068      | Exploitation for Privilege Escalation | Using a kernel exploit to gain root access on the target system.                            | Detects privilege escalation attempts via kernel vulnerabilities.               |
+| T1110      | Brute Force                      | Cracking passwords to extract credentials from the target system.                              | Identifies password cracking efforts to uncover valid credentials.              |
+| T1078      | Valid Accounts                   | Logging into Ubuntu Metasploit using provided credentials.                                      | Monitors use of legitimate credentials for potential unauthorized access.       |
 
 ---
 

@@ -92,7 +92,7 @@ For Windows VM: sudo nmap -O -sV 192.168.43.81
 Exercise 1.2: Scan automation using Legion
 1.	Start a scan on the Ubuntu host 
 ANS:
-![image](https://github.com/user-attachments/assets/bc8f3a3b-fb00-4dca-9e67-23c2738985b0)
+![image](https://github.com/user-attachments/assets/85933205-b187-4673-8306-e7629ebc12d3)
 
 3.	Show the list of ports and services:
 ANS:

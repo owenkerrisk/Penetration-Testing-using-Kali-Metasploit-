@@ -8,8 +8,10 @@
   2. [Network Scanning](#network-scanning)
       - [NMAP network scanning](#nmap-network-scanning)
       - [Scan Automation using Legion](#scan-automation-using-legion)  
-  4. [Tools Used](#tools-used)
-  5. [Network Diagram](#network-diagram)
+  3. [Exploiting Unreal IRC server](#exploiting-unreal-irc-server)
+      - [Exploiting UnrealIRCd](#sexploiting-unrealircd)
+      - [Start HTTP webservice](#start-http-webservice)
+  5. [Gaining Root Access](#gaining-root-access)
   6. [Setting up Splunk Server and Forwarders](#setting-up-splunk-server-and-forwarders)
       - [Setting Static IP Address and Default Route](#setting-static-ip-address-and-default-route)
       - [Install Splunk Enterprise](#install-splunk-enterprise)
@@ -24,6 +26,31 @@
   10. [Conclusion](#conclusion)
 
 ---
+
+# 📖 Table of Contents
+
+- [Introduction](#introduction)  
+- [Task 1 - Network Scanning](#task-1---network-scanning)  
+  - [Exercise 1.1: NMAP Network Scanning](#exercise-11-nmap-network-scanning)  
+  - [Exercise 1.2: Scan Automation using Legion](#exercise-12-scan-automation-using-legion)  
+- [Task 2 - Exploiting the Unreal IRC Server](#task-2---exploiting-the-unreal-irc-server)  
+  - [Exercise 2.1: Exploiting UnrealIRCd](#exercise-21-exploiting-unrealircd)  
+  - [Exercise 2.2: Start HTTP Webservice](#exercise-22-start-http-webservice)  
+- [Task 3 - Gaining Root Access](#task-3---gaining-root-access)  
+  - [Exercise 3.1: Identify and Acquire Kernel Vulnerability](#exercise-31-identify-and-acquire-kernel-vulnerability)  
+- [Task 4 - Cracking the Passwords](#task-4---cracking-the-passwords)  
+  - [Exercise 4.1: Acquire the Passwords](#exercise-41-acquire-the-passwords)  
+  - [Exercise 4.2: Deciphering the Password](#exercise-42-deciphering-the-password)  
+- [Task 5 - Login into Ubuntu Metasploit](#task-5---login-into-ubuntu-metasploit)  
+- [Task 6 - Mapping to ATT&CK](#task-6---mapping-to-attck)  
+  - [Definition](#definition)  
+  - [Tactics, Techniques, and Sub-Techniques](#tactics-techniques-and-sub-techniques)  
+- [Task 7 - ATT&CK Technique Countermeasure](#task-7---attck-technique-countermeasure)  
+  - [ATT&CK Matrix](#attck-matrix)  
+- [Conclusion](#conclusion)  
+- [References](#references)
+
+  ---
 
 ## Objective
 

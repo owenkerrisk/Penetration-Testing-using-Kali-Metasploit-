@@ -98,38 +98,37 @@ Start a scan on the Ubuntu host
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/7b3781cd-17e0-4194-9307-0c4b5ce86128)
+![Image](https://github.com/user-attachments/assets/ecc5aca1-47f6-4546-a337-e0fb0b398023)
 
 Exercie: Show the list of ports and services:
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/ef5b0eed-95f4-4cbb-a115-661ae8a6bb53)
+![Image](https://github.com/user-attachments/assets/ccb4043f-034b-4820-b026-d403fe58ac49)
 
 Exercise: Show the screenshot for port 80
 
 ANS: 
 
-![Image](https://github.com/user-attachments/assets/cdc86999-3648-4fc1-bb97-2d509a3edc33)
+![Image](https://github.com/user-attachments/assets/dcae5957-8efb-476b-b73a-f5aa4a33fdd6)
 
 Exercise: Run the nikto tool on port 80. Click on the service window in Legion, select http and select port 80 in right hand window, right click to display options. Select run nikto! Select Tools windows in Legion and select nikto to see results of scan). Indicate three vulnerabilities indicated by nikto on port 80 - refer to OSVDB number report. Include the OSVDB number where appropriate.
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/7fdc3335-48c3-414d-9bb0-214f06c9415d)
+![Image](https://github.com/user-attachments/assets/d2433851-b429-4d9c-acb3-a2c3b918a151)
 
-![Image](https://github.com/user-attachments/assets/c1d8bcfc-f98d-47b0-9fd1-852609a5cf96)
+![Image](https://github.com/user-attachments/assets/3913d9ac-5d1e-4f65-ad9b-7eb1b4faa7a1)
 
-![Image](https://github.com/user-attachments/assets/08ee9403-3954-4dde-a484-60083e56c260)
+![Image](https://github.com/user-attachments/assets/7aaf41e5-ee30-4c8e-95cb-9a6489caecbb)
 
-![Image](https://github.com/user-attachments/assets/c4a97e47-4c0f-48cd-bf31-c7013e1a8aa5)
+![Image](https://github.com/user-attachments/assets/fc322709-113d-48c8-ad11-ebe375c91d1b)
 
 Exercise. Grab the screenshot for port 3500 
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/cc9e67c6-4dac-4ec0-b0f6-da689f5901c7)
-
+![Image](https://github.com/user-attachments/assets/39be7bed-884c-493f-93ad-86fd5f83e860)
 
 Task 2 Exploiting the Unreal IRC server
 Exercise 2.1: Exploiting  UnrealIRCd - Give a short descripton of IRC and Unreal IRCd server
@@ -152,13 +151,13 @@ Exercise: Search for UnrealIRCD exploits in exploit-db. Use searchsploit and the
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/6abf720f-4ab7-4816-a116-a5a1133797ec)
+![Image](https://github.com/user-attachments/assets/2ff3da0d-7af3-4962-84d9-3cab3e8fd96f)
 
 Exercise: Open Metasploit using msfconscole or choose from the Kali application menu
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/3e690b91-afef-4902-adff-44a0cea759a0)
+![Image](https://github.com/user-attachments/assets/1a35c9a2-0bce-4a56-b140-42ddb257094b)
 
 Exercise: Search for UnrealIRDc exploits and select the one to use. Identify the CVE number and indicate the CVSS scoree for this vulnerability.
 
@@ -168,31 +167,31 @@ CVSS score: 7.5
 
 CVE number: CVE-2010-2075
 
-![Image](https://github.com/user-attachments/assets/c84f507d-5b22-4051-8eb5-01c9b5367102)
+![Image](https://github.com/user-attachments/assets/4279fc8b-dae5-4cd3-b16b-f36fde7fb6cb)
 
-![Image](https://github.com/user-attachments/assets/a04c8d00-bd09-46b7-885a-404bacec787e)
+![Image](https://github.com/user-attachments/assets/a03084b3-4d6e-4dc8-a548-1be998c3fe96)
 
-![Image](https://github.com/user-attachments/assets/ecf0d2c3-b24d-4462-8934-2c5643119177)
+![Image](https://github.com/user-attachments/assets/0e36976b-4bb9-473b-82b6-c1e20681127c)
 
 Exercise: Show and configure the options (Ihost/rhost/rport) (using Kali and Ubuntu host info)
 
 ANS:
 
-![image](https://github.com/user-attachments/assets/3c419738-202a-46ca-b833-e6d78c44b035)
+![Image](https://github.com/user-attachments/assets/0e36976b-4bb9-473b-82b6-c1e20681127c)
 
 Exercise: Select payload 5 - cmd/unix/reversE
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/1b1a5f0d-80bb-4ff0-8a82-f4e96695e11b)
+![Image](https://github.com/user-attachments/assets/8607cdf0-e083-473b-90a0-144c2bdc391a)
 
 Exercise: Run the exploit - you show now have gained remore access. Give the 'whoami' and 'ls' commands to show evidence of access. Provide a screensot showing exploit trace execution.
 
 ANS: 
 
-![Image](https://github.com/user-attachments/assets/5a6d1ad0-8079-4e3f-bb48-a28ebb4792b2)
+![Image](https://github.com/user-attachments/assets/109b4ea7-f3bd-4ccc-84c4-631937ca5223)
 
-![Image](https://github.com/user-attachments/assets/b5a1d64d-312d-4783-a21d-df9feaeb1bee)
+![Image](https://github.com/user-attachments/assets/cd01f464-b7d3-47f2-8e7b-4e57e93142c8)
 
 Exercise 2.2 - Start HTTP webservice 
 

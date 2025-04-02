@@ -27,7 +27,7 @@
 
 ---
 
-# 📖 Table of Contents
+## 📖 Table of Contents
 
 - [Introduction](#introduction)  
 - [Task 1 - Network Scanning](#task-1---network-scanning)  

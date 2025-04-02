@@ -94,11 +94,11 @@ Exercise 1.2: Scan automation using Legion
 ANS:
 ![image](https://github.com/user-attachments/assets/bc8f3a3b-fb00-4dca-9e67-23c2738985b0)
 
-2.	Show the list of ports and services:
+3.	Show the list of ports and services:
 ANS:
 ![image](https://github.com/user-attachments/assets/a4e0ba50-c1c9-4fdb-bba9-62a8df90a89c)
 
-3.	Show the screenshot for port 80
+4.	Show the screenshot for port 80
 
 ANS: 
 ![image](https://github.com/user-attachments/assets/c9ce68d4-700e-4538-8de4-350181720042)

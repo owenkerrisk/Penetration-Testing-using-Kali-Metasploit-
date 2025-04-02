@@ -1,4 +1,4 @@
-# Penetration Testing with Kali & Metasploit
+![image](https://github.com/user-attachments/assets/e88f0de0-1a30-4209-a377-65d5912d3792)# Penetration Testing with Kali & Metasploit
 
 ![Image](https://github.com/user-attachments/assets/be32b2c4-bc00-4bd1-aade-941d3b494e93)
 
@@ -56,24 +56,155 @@ All of these labs were completed on Oracle Box Virtual Machines which will demon
 
 ### Network Scanning
 
-Task 1: NMAP Network Scanning 
-Exercise 1.1: Carry out a ping sweep and list the network addresses discovered
+Task 1.1: NMAP Network Scanning 
+Exercise: Carry out a ping sweep and list the network addresses discovered
 
 ANS: nmap -sn 10.0.2.0/24
 
 ![Image](https://github.com/user-attachments/assets/99defb5d-21a4-4931-9d28-feebd0543225)
 
-Task - Carry out a TCP SYN scan to determine system ports on Ubuntu VM. Use -Pn to avoid host discovery phase. Show the list of ports for each VM.
+Exercise: Carry out a TCP SYN scan to determine system ports on Ubuntu VM. Use -Pn to avoid host discovery phase. Show the list of ports for each VM.
 
 ANS: sudo nmap -Pn -PS 192.168.43.252
 
 ![Image](https://github.com/user-attachments/assets/5dafabb2-5d41-484a-8104-ffe07176d92f)
 
-Task: Repeat but this time use the -p option to explicity indicate the ports. Use -p 1-65535. highlight any differences between the two scans.
+Exercise: Repeat but this time use the -p option to explicity indicate the ports. Use -p 1-65535. highlight any differences between the two scans.
 
 Answer: sudo nmap -Pn -PS -p1-65535 192.168.43.252
 
 ![Image](https://github.com/user-attachments/assets/542e706a-81c6-49f4-8afd-2956dc86ec37)
+
+From the second scan carried out, the major difference with the previous scan has to do with the addition of two newly discovered ports, 3500(rtmp-port) and 6697(ircs-u).
+
+Exercise: Carry out a service OS discovery on both machines and list the results.
+
+ANS:  For Linux VM: sudo nmap -O -sV 192.168.43.252
+
+![Image](https://github.com/user-attachments/assets/bd2a364f-fdb8-43f6-b026-da7564aa78f5)
+
+For Windows VM: sudo nmap -O -sV 192.168.43.81
+
+![image](https://github.com/user-attachments/assets/6c3084f2-4ac4-4795-a243-639ba5d361fa)
+
+![image](https://github.com/user-attachments/assets/4489b35c-254a-4333-af88-435c4af224e0)
+
+Exercise 1.2: Scan automation using Legion
+1.	Start a scan on the Ubuntu host 
+ANS:
+![image](https://github.com/user-attachments/assets/bc8f3a3b-fb00-4dca-9e67-23c2738985b0)
+
+2.	Show the list of ports and services:
+ANS:
+![image](https://github.com/user-attachments/assets/a4e0ba50-c1c9-4fdb-bba9-62a8df90a89c)
+
+3.	Show the screenshot for port 80
+
+ANS: 
+![image](https://github.com/user-attachments/assets/c9ce68d4-700e-4538-8de4-350181720042)
+
+4. Run the nikto tool on port 80. Click on the service window in Legion, select http and select port 80 in right hand window, right click to display options. Select run nikto! Select Tools windows in Legion and select nikto to see results of scan). Indicate three vulnerabilities indicated by nikto on port 80 - refer to OSVDB number report. Include the OSVDB number where appropriate.
+
+ANS:
+![image](https://github.com/user-attachments/assets/39375400-4245-4b91-871f-89bf936d105e)
+![image](https://github.com/user-attachments/assets/af3eebd4-5e99-4186-8e57-2610ff8778ee)
+![image](https://github.com/user-attachments/assets/75ffd492-d25a-4766-8f16-5501eaa49c4b)
+![image](https://github.com/user-attachments/assets/1c534740-239f-45b2-95aa-5719268fe5a9)
+
+5. Grab the screenshot for port 3500 
+ANS:
+![image](https://github.com/user-attachments/assets/e0d82d70-ce77-423d-b830-8855587b1c1d)
+
+Task 2 Exploiting the Unreal IRC server
+Exercise 2.1: Exploiting  UnrealIRCd - Give a short descripton of IRC and Unreal IRCd server
+
+### Internet Relay Chat (IRC)
+Internet Relay Chat (IRC) is a protocol for real-time text messaging over the internet, enabling communication between users on connected computers. IRC operates on a client-server model and is primarily used for group discussions in chat rooms called "channels," though it also supports private messaging, data transmission, and various server/client commands. Users connect to IRC servers using an IRC client or web interface, joining channels to discuss shared interests. 
+
+### Unreal IRCd Server
+UnrealIRCd is an open-source IRC server software, known for its advanced features and flexibility. It highlights its focus on modularity, with a highly configurable setup that includes features like SSL support, cloaking (to hide user IP addresses), advanced anti-flood and anti-spam systems, swear filtering, and module support for extending functionality. UnrealIRCd, specifically version 3.2.8.1 in this assignment, runs on port 6697 and is designed to host IRC channels, making it a popular choice for communities needing a robust and secure IRC server. 
+
+Exercise: Indicate the Unreal IRCd version and the port it is open on.
+
+ANS:
+Version: 3.2.8.1
+Port: 6697 
+
+Exercise: Search for UnrealIRCD exploits in exploit-db. Use searchsploit and the exploit-db.com website. Show the results via a screenshot. Identify which exploit is likely to be most useful.
+
+ANS:
+![image](https://github.com/user-attachments/assets/eb3ecdf4-0ade-4655-82a6-feda34dc1f0d)
+
+Exercise: Open Metasploit using msfconscole or choose from the Kali application menu
+
+ANS:
+
+![image](https://github.com/user-attachments/assets/895ea962-d72d-4a22-a998-5dca58a71ead)
+
+Exercise: Search for UnrealIRDc exploits and select the one to use. Identify the CVE number and indicate the CVSS scoree for this vulnerability.
+
+ANS:
+CVSS score: 7.5
+
+CVE number: CVE-2010-2075
+
+![image](https://github.com/user-attachments/assets/0707b203-bd9b-4f12-89e8-4c0c0b75eefe)
+![image](https://github.com/user-attachments/assets/c3fbe399-3ef3-4562-b27a-7e4f8019652e)
+![image](https://github.com/user-attachments/assets/39e6f7d4-f4fc-4da2-a97f-5fb44ddcac1a)
+
+Exercise: Show and configure the options (Ihost/rhost/rport) (using Kali and Ubuntu host info)
+
+ANS:
+
+![image](https://github.com/user-attachments/assets/3c419738-202a-46ca-b833-e6d78c44b035)
+
+Exercise: Select payload 5 - cmd/unix/reverse
+![image](https://github.com/user-attachments/assets/40c0fd9e-6a4e-41f5-95d5-389e84619e17)
+
+Exercise: Run the exploit - you show now have gained remore access. Give the 'whoami' and 'ls' commands to show evidence of access. Provide a screensot showing exploit trace execution.
+
+ANS: 
+![image](https://github.com/user-attachments/assets/ed8c84b1-79e3-4370-a290-f0fdc6628ec3)
+![image](https://github.com/user-attachments/assets/c6939e26-656d-4bed-a5a8-e1e996d457a7)
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ANS:
+ 
+ 
+
+
+ 
+ 
+
+
+4.	Grab the screenshot for port 3500. 
+ANS:
+
+ 
+
+
+
+
+
+
+
+
+Task 2 Exploiting the Unreal IRC server
+![image](https://github.com/user-attachments/assets/12fdd32a-d630-40ac-b391-ae2febed927a)
 
 
 

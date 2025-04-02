@@ -1,5 +1,7 @@
 # Penetration Testing with Kali & Metasploit
 
+![Image](https://github.com/user-attachments/assets/be32b2c4-bc00-4bd1-aade-941d3b494e93)
+
 ## Table of Contents
 
   1. [Introduction](#introduction)

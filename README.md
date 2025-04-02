@@ -32,14 +32,16 @@
 
 In today’s interconnected world, computer and cloud security are paramount for organizations striving to safeguard their operations. Cloud service providers and their corporate clients must proactively prepare to counter cyberthreats before they strike and ensure resilience against a diverse range of malicious activities to maintain a competitive edge. While cloud-based solutions offer compelling cost-saving benefits, they also introduce challenges related to scalability, privacy, and security. These concerns contribute to hesitation and complexities surrounding their widespread adoption.
 
-This report will focus on penetration testing using both Kali and Metasploit. The goal is to complete each assigned task given. I will be focusing on the following;
-•	Network Scanning
-•	Exploiting the unreal IRC Server
-•	Gaining root access
-•	Cracking the passwords
-•	Logging into ubuntu Metasploit
-•	Mapping to Att&ck
-•	Att&ck Technique Countermeasures 
+This report will focus on penetration testing using both Kali and Metasploit. The goal is to complete each assigned task given. I will be focusing on the following:
+
+
+-	Network Scanning
+- Exploiting the unreal IRC Server
+- Gaining root access
+- Cracking the passwords
+- Logging into ubuntu Metasploit
+- Mapping to Att&ck
+- Att&ck Technique Countermeasures 
 
 All of these labs were completed on Oracle Box Virtual Machines which will demonstrate all my work I completed. 
 
@@ -236,152 +238,67 @@ ANS:
 
 ![Image](https://github.com/user-attachments/assets/6487ba6e-127c-4566-9cba-e665c753f6e6)
 
+---
 
+## Exercise 4 - Acquire Passwords
 
+Exercise 4.1: Copy the password file (/etc/passwd) and the shadow file (/etc/shadow) to the /root home directory. Transfer both files to the Kali server. 
 
+This can be done either by: 
 
+a. Starting the SimpleHTTPServer on Ubuntu VM and exercising wget from the Kali VM. To do this you will first need to add a rule to the iptables to make the SimpleHTTPServer visible to Kali (e.g., add the default port 5000 iptables -I INPUT -p tcp --dport 5000 -j ACCEPT -I is recommended rather than -A as the rule may be added after a default drop rule otherwise. 
 
+b. Transferring the files to the /var/www/html directory, and fetching via browser from Kali VM. There are a couple of complications to be sorted here including setting appropriate file permissions to enable the shadow file to be read via browser. Accessing these files via a browser will require selecting and copying the text from the browser and pasting to a text file. This can be done using an editor such as vim or the nano editor in the Kali. 
 
+c. It should also be possible to transfer the files using nc/ncat - though I have not tried this. 
 
+Clearly show the steps taken via a screen shot.
 
+ANS:
 
+![Image](https://github.com/user-attachments/assets/9b8ebc9e-8373-4a93-b01f-4a5f207c5d77)
 
+![Image](https://github.com/user-attachments/assets/30e98ecb-4d47-445a-857d-48534cbda1f4)
 
+Exercise 4.2 - Deciphering the password
 
-## Network Diagram
+Exercise 4.2.1 - 
+1. Move both files (passwd, shadow) to your home directory if not already done so.
+2. Do unshadow passwd shadow > cracked
+3. You can now run the john the ripper as john --single cracked or alternatively john --wordlist=/usr/share/john/password.lst cracked
+4. This will now attempt to crack the Ubuntu passwords. In fact only one password will be cracked for user vagrant
 
-[![NetworkDiagram-ActiveDirectoryProject drawio](https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/f44ce545-f677-4006-8a65-b447b6d2978f)](https://imgur.com/ib3A0G1)
+ANS:
 
-## Setting up Splunk server and Forwarders
+![Image](https://github.com/user-attachments/assets/65cf1e4b-71b0-4963-9152-3c266a1596ea)
 
-### Setting Static IP Address and Default Route:
-
-- Configured a static IP address for the Splunk server and defined a default route with the gateway 192.168.10.10.
-```sudo nano /etc/netplan/00-installer-config.yaml```
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/99ee31d7-40c0-4739-8581-c6d72613b066" alt="Splunk server running in Oracle VirtualBox" width="635" />
-
-Apply the changes:
-```sudo netplan apply```
-
-### Install Splunk Enterprise:
-
-- Installed Splunk Enterprise on the Splunk server and configure it to start at boot.
-
-```tsoc@splunk:/opt/splunk/bin$ sudo ./splunk enable boot-start -user splunk```
-
-### Setting Up Splunk Forwarder:
-Installed and configured Splunk Forwarder on ADDC01 and target-PC (Windows 10) to send data to the Splunk server as a receiving indexer.
-
-![2024-06-28 22_10_10-ADDC01  Running  - Oracle VM VirtualBox](https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/54bdd7fe-3954-4c2e-8613-6ec049293241)
-
-### Installing Sysmon:
-
-Installed Sysmon to enhance event logging capabilities.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/306160cf-69bd-4322-b2ee-50dbd73b66eb" width="700" />
-
-### Configuring Inputs for Splunk Forwarder:
-
-Created an inputs.conf file in C:\Program Files\SplunkUniversalForwarder\etc\system\local on ADDC01 and target-PC, configuring settings as per.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/7b973c10-11a6-4620-949e-bc233cf55736" width="700" />
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/dc816365-9ca2-4435-af25-8d3e7e35aece" width="700" />
-
-### Restarting Splunk Forwarder Service:
-
-Restarted the Splunk Forwarder service on ADDC01 and set to log on as local system account.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/4aa87cdf-4e3e-49a8-a2fe-a0eae7de8f4f" width="700" />
-
-### Connecting to Splunk Web Interface:
-
-Accessed the Splunk server's web interface at port 8000, then created an index named endpoint as specified in the inputs.conf file. I repeated this process for both ADDC01 and target-PC to ensure the Splunk server receives events from both sources.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/fa26209e-7ad2-4136-a5f5-7ec7fba9c232" width="700" />
+![Image](https://github.com/user-attachments/assets/cd18ea4f-dc7f-496a-8648-567500d3f6e9)
 
 ---
 
-## Setting up Active Directory and provisioning users
+## Task 5 - Login via Ubuntu Metasploit
 
-Install Active Directory Domain Services on ADDC01
+Exercise 5.1 - You should now have the password for the 'vagrant' user.
 
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/80c01684-787a-4639-8f61-a3a8ab7270a7" width="700" />
+1. Login and show the home shell
 
-Promote ADDC01 to Domain Controller
+ANS:
 
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/39653cdf-11f8-4527-ac06-588629e50e05" width="700" />
+Username: vagrant Password: notavagrant
 
-I joined target_PC to the domain and tinkered around with users, groups and permissions. I used this script from Josh Madakor's video to create around 1000 users.
+![Image](https://github.com/user-attachments/assets/00f2854a-dd10-4205-bc9f-97ed9f0ba7ae)
 
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/64f8e66c-9404-40de-bb38-5e15b0b4d69a" width="700" />
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/5501aaa0-120e-4540-8630-00087fb0f77d" width="700" />
+Exercise 5.2 - List the files & directories and show - use a screenshot.
 
----
+ANS:
 
-## Performing a Brute force attack on target_PC and reviewing events via Splunk
+Files and directories in the “vagrant” home directory
+37292.c, 37293, 47170.c, chocobo_root, ofs, VBoxGuestAdditions.iso
 
-I used crowbar to launch a brute force dictionary attack on target_PC from the Kali Linux machine. I had enabled RDP on target_PC beforehand so this attack would be feasable.
+![Image](https://github.com/user-attachments/assets/c8ee511e-be48-4540-95c5-14fa10cb8277)
 
-![2024-06-29 22_33_32-kali-linux-2024 1-virtualbox-amd64  Running  - Oracle VM VirtualBox](https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/bc6e4d08-5653-45e0-a549-00d88246d945)
 
-After running the attack, we can see that Splunk recorded 42 events with event code 4265, which indicates failed login attempts. This corresponds to the 22 passwords in the wordlist I used for the attack, which was run twice.
 
-Among these, there are two events with event code 4264, representing successful login attempts. This outcome is expected since one of the passwords in the wordlist was of course correct.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/2d796524-390b-449e-86cc-615b9cad0b3a" width="700" />
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/643611dd-b8e9-41d4-9784-60ffa72060ae" width="600" />
-
-Here we can see that the attack indeed came from the Kali machine at 192.168.10.250
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/2770fcbd-b06a-4ba2-8b40-10d6a2ca347f" width="600" />
-
----
-
-## Installing Atomic Red Team, Performing a Test, and Reviewing Events in Splunk
-
-Atomic Red Team is an open-source project that offers a collection of tests to simulate cyberattacks based on the MITRE ATT&CK framework.
-
-Before installing Atomic Red Team (ATR) on target_PC, I excluded the C: drive (where ATR will be installed) from Microsoft Defender Anti-Virus scans. Note: This exclusion is not recommended for normal circumstances.
-
-To allow PowerShell scripts to run without restrictions for the current user, I used the command:
-```Set-ExecutionPolicy Bypass -Scope CurrentUser```
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/3df29cb5-77f4-4d34-8db9-e112b23f2c04" width="800" />
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/69ef5c78-2b1e-4ac4-82d3-2b66eef8e699" width="700" />
-
-Next, I installed ATR using the following commands:
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/853de60c-1d63-4a9b-b9a1-43e50401b827" width="800" />
-
-Now we can view all the tests available in Atomic Red Team. Each test is named after the corresponding MITRE ATT&CK technique. For example, I ran the T1136.001 test, which corresponds to the "Create Account: Local Account" persistence technique in MITRE ATT&CK.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/189a3b58-e48d-426a-bfca-9e2ad1da5d1e" width="700" />
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/febce88b-103b-4330-ba3a-80458c62cd0d" width="500" />
-
-Running the test created a user called NewLocalUser, added it to the local administrators group, and finally deleted the user.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/9426fff8-1b57-4ae5-8d69-5aa5f1b00959" width="700" />
-
-We see these events in Splunk.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/d9d4a3d4-a2ca-4542-bda1-e31a7db4472a" width="700" />
-
-Here are the corresponding event codes:
-- 4798: A user's local group membership was enumerated.
-- 4738: A user account was changed.
-- 4720: A user account was created.
-- 4722: A user account was enabled.
-- 4724: An attempt was made to reset an account's password.
-- 4726: A user account was deleted.
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/06f90944-7158-4630-b824-e3f742759c78" width="700" />
-
-Below is the final event showing "NewLocalUser" being deleted
-
-<img src="https://github.com/PaulMiguelSec/Active-Directory-Lab/assets/174075754/feb94ab2-9222-4a1a-99b4-020f09bfda07" width="700" />
-
----
 
 # 🛡️ MITRE ATT&CK TTPs for Penetration Testing Assignment
 
@@ -393,6 +310,8 @@ Below is the final event showing "NewLocalUser" being deleted
 | T1068      | Exploitation for Privilege Escalation | Using a kernel exploit to gain root access on the target system (Task 3).                            | Detects privilege escalation attempts via kernel vulnerabilities.               |
 | T1110      | Brute Force                      | Cracking passwords to extract credentials from the target system (Task 4).                              | Identifies password cracking efforts to uncover valid credentials.              |
 | T1078      | Valid Accounts                   | Logging into Ubuntu Metasploit using provided credentials (Task 5).                                      | Monitors use of legitimate credentials for potential unauthorized access.       |
+
+---
 
 # Conclusion
 

@@ -28,7 +28,7 @@
 This lab is all about getting hands-on with Active Directory and security monitoring. I've set up Windows Server 2022 AD domain controller and a Ubuntu Splunk server, then used Kali Linux to play the role of an attacker in the network. The goal is to see what kind of events get generated from these attacks and learn how to configure and use Splunk to catch them. I aim to dive into domain environments and sharpen threat detection skills.
 
 This is by no means a comprehensive step-by-step of my process, but rather a few key processes that are interesting or will be useful for my future reference.
-### Skills Learned
+### Network Scanning
 
 - Configuring and managing Active Directory domain environments
 - Setting up and utilizing Splunk for security event monitoring and analysis

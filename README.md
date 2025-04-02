@@ -63,19 +63,19 @@ Exercise: Carry out a ping sweep and list the network addresses discovered
 
 ANS: nmap -sn 10.0.2.0/24
 
-![Image](https://github.com/user-attachments/assets/99defb5d-21a4-4931-9d28-feebd0543225)
+![Image](https://github.com/user-attachments/assets/c1f64df5-a6a3-4efa-920f-8e29a56b3d49)
 
 Exercise: Carry out a TCP SYN scan to determine system ports on Ubuntu VM. Use -Pn to avoid host discovery phase. Show the list of ports for each VM.
 
 ANS: sudo nmap -Pn -PS 192.168.43.252
 
-![Image](https://github.com/user-attachments/assets/5dafabb2-5d41-484a-8104-ffe07176d92f)
+![Image](https://github.com/user-attachments/assets/2d0ca4bd-fb33-4279-8973-c626042eb829)
 
 Exercise: Repeat but this time use the -p option to explicity indicate the ports. Use -p 1-65535. highlight any differences between the two scans.
 
 Answer: sudo nmap -Pn -PS -p1-65535 192.168.43.252
 
-![Image](https://github.com/user-attachments/assets/542e706a-81c6-49f4-8afd-2956dc86ec37)
+![Image](https://github.com/user-attachments/assets/709032a2-881a-4258-ad02-de2ea612f450)
 
 From the second scan carried out, the major difference with the previous scan has to do with the addition of two newly discovered ports, 3500(rtmp-port) and 6697(ircs-u).
 
@@ -83,13 +83,13 @@ Exercise: Carry out a service OS discovery on both machines and list the results
 
 ANS:  For Linux VM: sudo nmap -O -sV 192.168.43.252
 
-![Image](https://github.com/user-attachments/assets/bd2a364f-fdb8-43f6-b026-da7564aa78f5)
+![Image](https://github.com/user-attachments/assets/58894bfc-1a1f-4a93-9cce-1c6bda735b40)
 
 For Windows VM: sudo nmap -O -sV 192.168.43.81
 
-![image](https://github.com/user-attachments/assets/6c3084f2-4ac4-4795-a243-639ba5d361fa)
+![Image](https://github.com/user-attachments/assets/65b8ccd0-f230-47f6-b4fd-0921e3d5fe91)
 
-![image](https://github.com/user-attachments/assets/4489b35c-254a-4333-af88-435c4af224e0)
+![Image](https://github.com/user-attachments/assets/8c5b9d30-2d74-4193-bb8c-e0fd6f8ad0b6)
 
 ---
 

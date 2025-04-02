@@ -89,6 +89,12 @@ For Windows VM: sudo nmap -O -sV 192.168.43.81
 
 ![image](https://github.com/user-attachments/assets/4489b35c-254a-4333-af88-435c4af224e0)
 
+
+
+Exercise 1.2:
+![image](https://github.com/user-attachments/assets/7d1c2c6e-2c5c-42f5-a5ff-22ab33f45880)
+
+
 Exercise 1.2: Scan automation using Legion
 
 Start a scan on the Ubuntu host 

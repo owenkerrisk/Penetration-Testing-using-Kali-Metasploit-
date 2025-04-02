@@ -45,6 +45,8 @@ This report will focus on penetration testing using both Kali and Metasploit. Th
 
 All of these labs were completed on Oracle Box Virtual Machines which will demonstrate all my work I completed. 
 
+---
+
 ### Tools Used
 
 - Kali Linux (for penetration testing and running Nmap, Legion, and Metasploit)
@@ -55,6 +57,8 @@ All of these labs were completed on Oracle Box Virtual Machines which will demon
 - Oracle VirtualBox (for virtualizing the lab environment with Ubuntu and Windows VMs)
 - Ubuntu VM (for hosting Metasploit and conducting penetration testing tasks)
 - Windows VM (for additional network scanning and testing)
+
+---
 
 ### Network Scanning
 
@@ -271,7 +275,7 @@ ANS:
 
 ![Image](https://github.com/user-attachments/assets/7bef8562-01b2-4942-912e-dcf64c3191fc)
 
-![Image](https://github.com/user-attachments/assets/cd18ea4f-dc7f-496a-8648-567500d3f6e9)
+![Image](https://github.com/user-attachments/assets/f56183fb-fc50-4e67-a07d-7e7e707f2a3e)
 
 ---
 
@@ -299,7 +303,7 @@ Files and directories in the “vagrant” home directory
 ---
 
 
-Mapping to ATT&CK
+## Task 6 - Mapping to ATT&CK
 
 MITRE ATT&CK is a guideline for classifying and describing cyberattacks and intrusions with a focus on TTPs (Tactics, Techniques and Procedures) and thereby the top of the Pyramid of Pain.
 
@@ -313,6 +317,8 @@ Techniques: how the goals are achieved.
 
 Procedures: specific technique implementation.
 
+Attackers can exploit organisational networks through various methods, including session hijacking, SQL injection, and other sophisticated techniques. As a Security Analyst, I recognize that adversaries are growing increasingly adept in their attack strategies. Organisations must remain vigilant and proactive, as even a single oversight can lead to substantial damage,
+
 ## 🛡️ MITRE ATT&CK TTPs for Penetration Testing Assignment
 
 | **TTP ID** | **TTP Name**                     | **Description**                                                                                          | **Detection Relevance**                                                         |
@@ -323,6 +329,15 @@ Procedures: specific technique implementation.
 | T1068      | Exploitation for Privilege Escalation | Using a kernel exploit to gain root access on the target system.                            | Detects privilege escalation attempts via kernel vulnerabilities.               |
 | T1110      | Brute Force                      | Cracking passwords to extract credentials from the target system.                              | Identifies password cracking efforts to uncover valid credentials.              |
 | T1078      | Valid Accounts                   | Logging into Ubuntu Metasploit using provided credentials.                                      | Monitors use of legitimate credentials for potential unauthorized access.       |
+
+The MITRE ATT&CK framework is a powerful tool for understanding adversary tactics and techniques, but it also serves as a foundation for developing effective countermeasures to bolster organizational defenses. By mapping threats to the ATT&CK matrix, security teams can identify specific techniques such as session hijacking (T1563) or SQL injection (T1190) and implement targeted mitigations, such as enforcing multi-factor authentication, sanitizing database inputs, or deploying intrusion detection systems to monitor for suspicious activity. For instance, to counter reconnaissance techniques (TA0043) like active scanning (T1595), organisations can use network segmentation and firewall rules to limit exposure of internal services, as well as deploy deception technologies like honeypots to detect and mislead attackers. Additionally, adopting a threat-informed defense strategy. It allows teams to simulate adversary behaviors, test their defenses, and refine incident response plans, ensuring resilience against evolving cyber threats. This proactive approach transforms ATT&CK from a knowledge base into a practical guide for strengthening security postures.
+
+ATT&CK Matrix for Enterprise
+
+Source: https://attack.mitre.org/
+
+![Image](https://github.com/user-attachments/assets/deadb775-444a-435f-a4bb-aaad16aa535a)
+
 
 ---
 

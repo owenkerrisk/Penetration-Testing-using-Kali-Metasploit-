@@ -1,6 +1,6 @@
-![image](https://github.com/user-attachments/assets/e88f0de0-1a30-4209-a377-65d5912d3792)# Penetration Testing with Kali & Metasploit
+# Penetration Testing with Kali & Metasploit
 
-![Image](https://github.com/user-attachments/assets/be32b2c4-bc00-4bd1-aade-941d3b494e93)
+![image](https://github.com/user-attachments/assets/ca1e8881-ac5b-43db-8589-2ab757bf4530)
 
 ## 📖 Table of Contents
 

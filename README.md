@@ -147,24 +147,27 @@ Port: 6697
 Exercise: Search for UnrealIRCD exploits in exploit-db. Use searchsploit and the exploit-db.com website. Show the results via a screenshot. Identify which exploit is likely to be most useful.
 
 ANS:
-![image](https://github.com/user-attachments/assets/eb3ecdf4-0ade-4655-82a6-feda34dc1f0d)
+
+![Image](https://github.com/user-attachments/assets/6abf720f-4ab7-4816-a116-a5a1133797ec)
 
 Exercise: Open Metasploit using msfconscole or choose from the Kali application menu
 
 ANS:
 
-![image](https://github.com/user-attachments/assets/895ea962-d72d-4a22-a998-5dca58a71ead)
+![Image](https://github.com/user-attachments/assets/3e690b91-afef-4902-adff-44a0cea759a0)
 
 Exercise: Search for UnrealIRDc exploits and select the one to use. Identify the CVE number and indicate the CVSS scoree for this vulnerability.
 
 ANS:
-CVSS score: 7.5
 
+CVSS score: 7.5
 CVE number: CVE-2010-2075
 
-![image](https://github.com/user-attachments/assets/0707b203-bd9b-4f12-89e8-4c0c0b75eefe)
-![image](https://github.com/user-attachments/assets/c3fbe399-3ef3-4562-b27a-7e4f8019652e)
-![image](https://github.com/user-attachments/assets/39e6f7d4-f4fc-4da2-a97f-5fb44ddcac1a)
+![Image](https://github.com/user-attachments/assets/c84f507d-5b22-4051-8eb5-01c9b5367102)
+
+![Image](https://github.com/user-attachments/assets/a04c8d00-bd09-46b7-885a-404bacec787e)
+
+![Image](https://github.com/user-attachments/assets/ecf0d2c3-b24d-4462-8934-2c5643119177)
 
 Exercise: Show and configure the options (Ihost/rhost/rport) (using Kali and Ubuntu host info)
 
@@ -172,8 +175,11 @@ ANS:
 
 ![image](https://github.com/user-attachments/assets/3c419738-202a-46ca-b833-e6d78c44b035)
 
-Exercise: Select payload 5 - cmd/unix/reverse
-![image](https://github.com/user-attachments/assets/40c0fd9e-6a4e-41f5-95d5-389e84619e17)
+Exercise: Select payload 5 - cmd/unix/reversE
+
+ANS:
+
+![Image](https://github.com/user-attachments/assets/1b1a5f0d-80bb-4ff0-8a82-f4e96695e11b)
 
 Exercise: Run the exploit - you show now have gained remore access. Give the 'whoami' and 'ls' commands to show evidence of access. Provide a screensot showing exploit trace execution.
 

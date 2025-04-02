@@ -270,7 +270,7 @@ Exercise 4.2.1 -
 
 ANS:
 
-![Image](https://github.com/user-attachments/assets/65cf1e4b-71b0-4963-9152-3c266a1596ea)
+![Image](https://github.com/user-attachments/assets/7bef8562-01b2-4942-912e-dcf64c3191fc)
 
 ![Image](https://github.com/user-attachments/assets/cd18ea4f-dc7f-496a-8648-567500d3f6e9)
 

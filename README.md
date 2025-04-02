@@ -141,7 +141,9 @@ UnrealIRCd is an open-source IRC server software, known for its advanced feature
 Exercise: Indicate the Unreal IRCd version and the port it is open on.
 
 ANS:
+
 Version: 3.2.8.1
+
 Port: 6697 
 
 Exercise: Search for UnrealIRCD exploits in exploit-db. Use searchsploit and the exploit-db.com website. Show the results via a screenshot. Identify which exploit is likely to be most useful.
@@ -161,6 +163,7 @@ Exercise: Search for UnrealIRDc exploits and select the one to use. Identify the
 ANS:
 
 CVSS score: 7.5
+
 CVE number: CVE-2010-2075
 
 ![Image](https://github.com/user-attachments/assets/c84f507d-5b22-4051-8eb5-01c9b5367102)
@@ -184,37 +187,54 @@ ANS:
 Exercise: Run the exploit - you show now have gained remore access. Give the 'whoami' and 'ls' commands to show evidence of access. Provide a screensot showing exploit trace execution.
 
 ANS: 
-![image](https://github.com/user-attachments/assets/ed8c84b1-79e3-4370-a290-f0fdc6628ec3)
-![image](https://github.com/user-attachments/assets/c6939e26-656d-4bed-a5a8-e1e996d457a7)
 
+![Image](https://github.com/user-attachments/assets/5a6d1ad0-8079-4e3f-bb48-a28ebb4792b2)
 
+![Image](https://github.com/user-attachments/assets/b5a1d64d-312d-4783-a21d-df9feaeb1bee)
 
+Exercise 2.2 - Start HTTP webservice 
 
-
-
-
-
- 
-
-
-
-
-
-
+Exercise 2.2.1: In a seperate shell start the SimpleHTTPServer in directory /root/Downloads. Use python -m SimpleHTTServer
 
 ANS:
- 
- 
 
+![Image](https://github.com/user-attachments/assets/06eaa1e6-c989-480c-ac4a-58817d57821f)
 
- 
- 
+---
 
+## Gaining Root Access
 
-4.	Grab the screenshot for port 3500. 
+Exercise 3.1 - Identify the Linux distribution (cat /etc/issue) and the kernel version (uname -a). Is the kernel 32 or 64 bit?
+
 ANS:
 
- 
+The kernel is 64-bit
+
+![Image](https://github.com/user-attachments/assets/b872e796-db81-4d70-b270-18d7428152f7)
+
+Exercise 3.2 - Use searchsploit to look for any kernel exploit(s) found and indicate which will be used. Show the kernel version number. Show the exploit(s) via a screenshot. Give a short description of the vulnerability using the associated exploit-db information. Indicate the CVE number and the CVSS score.
+
+ANS:
+
+CVE number: CVE-2010-2075
+
+CVSS score: 7.5 
+
+![Image](https://github.com/user-attachments/assets/5cd083e9-ad60-47af-bc89-6f9ed081fe91)
+
+![Image](https://github.com/user-attachments/assets/439c8eb6-cf42-4099-ace6-c5b487f26a36)
+
+Exercise 3.3 - Copy the vulnerability C file to the /root directory and transfer the vulnerability file to Ubuntu using wget
+
+ANS: 
+
+![Image](https://github.com/user-attachments/assets/9733de53-fc16-4089-ab2f-a2d5cc0a5d4c)
+
+Exercise 3.5 You should now have a root shell #. Use whoami to confirm root access. Show the entire sequence via a screen shot.
+
+ANS:
+
+![Image](https://github.com/user-attachments/assets/6487ba6e-127c-4566-9cba-e665c753f6e6)
 
 
 
@@ -223,8 +243,8 @@ ANS:
 
 
 
-Task 2 Exploiting the Unreal IRC server
-![image](https://github.com/user-attachments/assets/12fdd32a-d630-40ac-b391-ae2febed927a)
+
+
 
 
 

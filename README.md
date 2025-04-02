@@ -113,14 +113,18 @@ ANS:
 Exercise: Run the nikto tool on port 80. Click on the service window in Legion, select http and select port 80 in right hand window, right click to display options. Select run nikto! Select Tools windows in Legion and select nikto to see results of scan). Indicate three vulnerabilities indicated by nikto on port 80 - refer to OSVDB number report. Include the OSVDB number where appropriate.
 
 ANS:
-![image](https://github.com/user-attachments/assets/39375400-4245-4b91-871f-89bf936d105e)
-![image](https://github.com/user-attachments/assets/af3eebd4-5e99-4186-8e57-2610ff8778ee)
-![image](https://github.com/user-attachments/assets/75ffd492-d25a-4766-8f16-5501eaa49c4b)
-![image](https://github.com/user-attachments/assets/1c534740-239f-45b2-95aa-5719268fe5a9)
 
-5. Grab the screenshot for port 3500 
+![Image](https://github.com/user-attachments/assets/7fdc3335-48c3-414d-9bb0-214f06c9415d)
+![Image](https://github.com/user-attachments/assets/c1d8bcfc-f98d-47b0-9fd1-852609a5cf96)
+![Image](https://github.com/user-attachments/assets/08ee9403-3954-4dde-a484-60083e56c260)
+![Image](https://github.com/user-attachments/assets/c4a97e47-4c0f-48cd-bf31-c7013e1a8aa5)
+
+Exercise. Grab the screenshot for port 3500 
+
 ANS:
-![image](https://github.com/user-attachments/assets/e0d82d70-ce77-423d-b830-8855587b1c1d)
+
+![Image](https://github.com/user-attachments/assets/cc9e67c6-4dac-4ec0-b0f6-da689f5901c7)
+
 
 Task 2 Exploiting the Unreal IRC server
 Exercise 2.1: Exploiting  UnrealIRCd - Give a short descripton of IRC and Unreal IRCd server

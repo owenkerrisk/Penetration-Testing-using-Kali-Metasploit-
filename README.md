@@ -6,7 +6,7 @@
 
 - [Introduction](#introduction)
 - [Tools Used](#tools-used)
-- [Task 1 - Network Scanning](#task-1---network-scanning)  
+- [Network Scanning](#network-scanning)  
   - [Exercise 1.1: NMAP Network Scanning](#exercise-11-nmap-network-scanning)  
   - [Exercise 1.2: Scan Automation using Legion](#exercise-12-scan-automation-using-legion)  
 - [Task 2 - Exploiting the Unreal IRC Server](#task-2---exploiting-the-unreal-irc-server)  

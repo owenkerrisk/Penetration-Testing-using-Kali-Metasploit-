@@ -60,6 +60,10 @@ All of these labs were completed on Oracle Box Virtual Machines which will demon
 
 ---
 
+#### Lab Enviornment
+
+![Image](https://github.com/user-attachments/assets/7bb13030-d9dd-4f9d-94d5-2b7eea21f424)
+
 ### Network Scanning
 
 Task 1.1: NMAP Network Scanning 
